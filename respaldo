@@ -1,0 +1,53 @@
+const mongoose = require('mongoose');
+var express = require('express');
+var router = express.Router();
+var {grades} = require('../modeloUser');
+const buscar ={};
+const bodyParser = require('body-parser');
+var txt;
+router.get('/', function(req, res, next) {
+  
+  buscar.guardar()
+
+  .then(a=>{
+    res.render('obtener',{prop: a});
+  })
+
+});
+
+
+router.post('/save', (req, res) => {
+  res.send(`${req.body.fname}`);
+  const txt= `${req.body.fname}`
+
+  console.log(txt)
+  return txt;
+  //res.redirect('/obtener')
+
+});
+
+buscar.guardar = async()=>{
+
+  const notes = await grades.find({student_id:{$eq:txt}});
+  //console.log(notes);
+  return notes; 
+  // res.json(notes)
+  
+}
+    
+  
+  module.exports = router;
+  //module.exports =buscarPorCoincidenciaTodos;
+
+/*
+router.post('/save', (req, res) => {
+  res.send(`${req.body.fname}`);
+  const txt= `${req.body.fname}`
+
+  console.log(txt)
+  return txt;
+  res.redirect('/obtener')
+
+
+});
+*/

@@ -1,0 +1,97 @@
+const buscarPorCoincidenciaTodos=async()=>{
+  post = await grades.find({
+ student_id:14
+})
+//console.log("resultado",post);
+//module.exports={post}
+return post;
+
+}
+buscarPorCoincidenciaTodos()
+console.log("caraho",post)
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  </body>
+</html>
+/*
+if(post){
+  res.json({post});
+}else{
+  res.json({mensaje:"No hay nada"});
+}   
+*/
+
+
+router.get('/', function(req, res, next) {
+  
+  const buscarPorCoincidenciaTodos=async(req,res)=>{
+    const post = await gatos.find({nombre:"michi"});
+    //const div = document.createElement('div')
+
+    //div.innerHTML=`<h1>${post}</h1>`
+    //contenedorproductos.appendChild(div)
+    console.log(post);
+
+  }
+    res.render('obtener',{post});
+    buscarPorCoincidenciaTodos()
+
+  });
+
+
+  const buscarPorCoincidenciaTodos=async()=>{
+    const post = await gatos.find({nombre:{$eq:"michi"}});
+    console.log(post);
+
+}
+  
+  buscarPorCoincidenciaTodos()
+  const mongoose = require('mongoose');
+  
+  //unique:true, require:true
+
+  const calificaciones = new mongoose.Schema(
+    {
+  nombre:{
+    type:String
+  },
+  vacuna:{
+    type:Number
+  },
+  edad:{
+    type:Number
+  }
+    },    {
+      timetamps:true
+        }
+  )
+  const gatos = new mongoose.model('gatos',calificaciones);
+
+  module.exports ={gatos}
+
+
+
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+        <a href='/obtener/save' role="button" class="btn btn-success">
+            save
+        </a>
+    </div>
+</div>
+
+
+<input type="number" name="txt" id="txt">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-md-3">
+        <a href='/obtener/save' role="button" class="btn btn-success">
+            save
+        </a>
+    </div>
+</div>
